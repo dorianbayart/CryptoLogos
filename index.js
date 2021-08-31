@@ -7,7 +7,7 @@ const fs = require('fs')
 const makeDir = require('make-dir')
 const os = require('os')
 
-const SUBFOLDER = 'CryptoLogos'
+const SUBFOLDER = 'dist'
 const INTERVAL = 1000
 
 const CHAINS = {

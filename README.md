@@ -5,7 +5,7 @@
 
 
 
-## What is CryptoLogs ?
+## What is CryptoLogos ?
 
 When you work with Web3 and blockchain's explorers, the only way to precisely identify a token is by its contract address.
 
@@ -20,9 +20,9 @@ With CryptoLogos, you can grab logos of many crypto tokens directly from their e
 ### Example
 _Problem_: you need to display the DAI logo of the polygon blockchain. You know the contract address is: [0x8f3cf7ad23cd3cadbd9735aff958023239c6a063](https://polygonscan.com/token/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063)
 
-_Solution_: build the following URL with the chain name and the contract address: https://github.com/dorianbayart/CryptoLogos/tree/main/CryptoLogos/[chain]/[contract address].png?raw=true
+_Solution_: build the following URL with the chain name and the contract address: https://raw.githubusercontent.com/dorianbayart/CryptoLogos/tree/main/dist/[chain]/[contract address].png
 
-_Result_: ![DAI Logo](https://github.com/dorianbayart/CryptoLogos/tree/main/CryptoLogos/polygon/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063.png?raw=true)
+_Result_: ![DAI Logo](https://raw.githubusercontent.com/dorianbayart/CryptoLogos/tree/main/dist/polygon/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063.png)
 
 
 
@@ -33,7 +33,7 @@ npm install
 ```
 
 ```
-npm run start:*chain*
+npm run start:chain
 ```
 where *chain* can be one of those parameters:
 * ethereum
