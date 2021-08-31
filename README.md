@@ -20,7 +20,7 @@ With CryptoLogos, you can grab logos of many crypto tokens directly from their e
 ### Example
 _Problem_: you need to display the DAI logo of the polygon blockchain. You know the contract address is: [0x8f3cf7ad23cd3cadbd9735aff958023239c6a063](https://polygonscan.com/token/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063)
 
-_Solution_: build the following URL with the chain name and the contract address: raw.githubusercontent.com/dorianbayart/CryptoLogos/main/dist/[*chain*]/[*contract address*].png
+_Solution_: build the URL with the chain name and the contract address: raw.githubusercontent.com/dorianbayart/CryptoLogos/main/dist/[*chain*]/[*contract address*].png
 
 _Result_: ![DAI Logo](https://raw.githubusercontent.com/dorianbayart/CryptoLogos/main/dist/polygon/0x8f3cf7ad23cd3cadbd9735aff958023239c6a063.png)
 
