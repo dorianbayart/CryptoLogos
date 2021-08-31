@@ -26,7 +26,7 @@ _Result_: ![DAI Logo](https://raw.githubusercontent.com/dorianbayart/CryptoLogos
 
 
 
-## How to run the commands ?
+## How to run commands ?
 
 ```
 npm install
