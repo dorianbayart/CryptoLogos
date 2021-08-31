@@ -1,0 +1,33 @@
+{
+  "name": "cryptologos",
+  "version": "1.0.0",
+  "description": "Hundreds of crypto logos named by their normalized contract address",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js ethereum",
+    "start:ethereum": "node index.js ethereum",
+    "start:polygon": "node index.js polygon",
+    "start:bsc": "node index.js bsc",
+    "start:fantom": "node index.js fantom",
+    "start:all": "npm run start:ethereum && npm run start:polygon && npm run start:bsc && npm run start:fantom"
+  },
+  "keywords": [
+    "crypto",
+    "library",
+    "logo",
+    "icon",
+    "contract",
+    "ethereum",
+    "polygon",
+    "bsc",
+    "fantom"
+  ],
+  "author": "Dorian Bayart",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "make-dir": "^3.1.0",
+    "node-fetch": "^2.6.1",
+    "node-libcurl": "^2.3.3"
+  }
+}
