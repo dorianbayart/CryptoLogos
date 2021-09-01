@@ -64,3 +64,9 @@ where *chain* can be one of those parameters:
 A lot of errors are due to the anti-DDOS of Cloudflare, wich prevents bots to send many requests.
 
 You can run the same command again to resume, already downloaded logos will be bypassed.
+
+
+
+## TODO
+
+* [ ] Add the possibility to download only one logo - with a new command line
