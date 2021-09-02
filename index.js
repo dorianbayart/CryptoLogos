@@ -41,6 +41,7 @@ let total = 0
 let imgDownloaded = 0
 let errors = 0
 let alreadyExists = 0
+let timer = 0
 
 fetch(chain.list)
   .then(res => res.json())
@@ -59,6 +60,7 @@ fetch(chain.list)
     Object.keys(json).forEach(async (tokenAddress, i) => {
       tokenAddress = tokenAddress.toLowerCase()
       if (!fs.existsSync(path + '/' + tokenAddress + '.png')) {
+        timer += 1
         setTimeout(async function() {
           // console.log(tokenAddress)
           await curly.get(chain.explorer + '/token/' + tokenAddress)
@@ -89,7 +91,7 @@ fetch(chain.list)
               errors += 1
               logStatus()
             })
-        }, i * 1000)
+        }, timer * 1250)
 
       } else {
         // already exists
