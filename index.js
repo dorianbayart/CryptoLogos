@@ -19,7 +19,7 @@ const CHAINS = {
   POLYGON: {
     path: 'polygon',
     explorer: 'https://polygonscan.com',
-    list: 'https://api.dexpairs.xyz/sushiswap/list'
+    list: 'https://api.dexpairs.xyz/quickswap/list'
   },
   BSC: {
     path: 'bsc',
