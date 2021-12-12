@@ -23,7 +23,7 @@
     "fantom"
   ],
   "author": "Dorian Bayart",
-  "license": "MIT",
+  "license": "GNU General Public License v3.0",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
     "make-dir": "^3.1.0",
