@@ -25,9 +25,10 @@
   "author": "Dorian Bayart",
   "license": "GNU General Public License v3.0",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.10",
-    "make-dir": "^3.1.0",
-    "node-fetch": "^2.6.1",
-    "node-libcurl": "^2.3.3"
-  }
+    "cheerio": "*",
+    "make-dir": "*",
+    "node-fetch": "*",
+    "node-libcurl": "^2.3.4-0"
+  },
+  "type": "module"
 }

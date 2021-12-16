@@ -1,11 +1,11 @@
 'use strict'
 
-const cheerio = require('cheerio')
-const { curly } = require('node-libcurl')
-const fetch = require('node-fetch')
-const fs = require('fs')
-const makeDir = require('make-dir')
-const os = require('os')
+import cheerio from 'cheerio'
+import { curly } from 'node-libcurl'
+import fetch from 'node-fetch'
+import fs from 'fs'
+import makeDir from 'make-dir'
+import os from 'os'
 
 const SUBFOLDER = 'dist'
 const INTERVAL = 1000
