@@ -9,7 +9,8 @@
     "start:polygon": "node index.js polygon",
     "start:bsc": "node index.js bsc",
     "start:fantom": "node index.js fantom",
-    "start:all": "npm run start:ethereum && npm run start:polygon && npm run start:bsc && npm run start:fantom"
+    "start:xdai": "node index.js xdai",
+    "start:all": "npm run start:ethereum && npm run start:polygon && npm run start:bsc && npm run start:fantom && npm run start:xdai"
   },
   "keywords": [
     "crypto",

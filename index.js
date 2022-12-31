@@ -30,6 +30,11 @@ const CHAINS = {
     path: 'fantom',
     explorer: 'https://ftmscan.com',
     list: 'https://api.dexpairs.xyz/spiritswap/list'
+  },
+  XDAI: {
+    path: 'xdai',
+    explorer: 'https://gnosisscan.io',
+    list: 'https://api.dexpairs.xyz/honeyswap/list'
   }
 }
 
@@ -44,63 +49,68 @@ let alreadyExists = 0
 let timer = 0
 
 fetch(chain.list)
-  .then(res => res.json())
-  .then(async (json) => {
-    const path = await makeDir(SUBFOLDER + '/' + chain.path)
+.then(res => res.json())
+.then(async (json) => {
+  const path = await makeDir(SUBFOLDER + '/' + chain.path)
 
-    if(Object.keys(json).length > 0) {
-      fs.writeFile(path + '/map.json', JSON.stringify(json), () =>
-        {}
-      )
-    } else {
-      json = JSON.parse(fs.readFileSync(path + '/map.json'))
-    }
+  if(Object.keys(json).length > 0) {
+    fs.writeFile(path + '/map.json', JSON.stringify(json), () =>
+    {}
+  )
+} else {
+  json = JSON.parse(fs.readFileSync(path + '/map.json'))
+}
 
-    total = Object.keys(json).length
-    Object.keys(json).forEach(async (tokenAddress, i) => {
-      tokenAddress = tokenAddress.toLowerCase()
-      if (!fs.existsSync(path + '/' + tokenAddress + '.png')) {
-        timer += 1
-        setTimeout(async function() {
-          // console.log(tokenAddress)
-          await curly.get(chain.explorer + '/token/' + tokenAddress)
-            .then(({ statusCode, data }) => data)
-            .then(async (html) => {
-              const $ = cheerio.load(html)
-              if($('img.u-sm-avatar').length === 0) {
-                console.log('No picture found in the page for: ' + tokenAddress)
-                return
-              }
-              const imgSrc = $('img.u-sm-avatar')[0].attribs.src
-              // console.log(imgSrc)
+total = Object.keys(json).length
+Object.keys(json).forEach(async (tokenAddress, i) => {
+  tokenAddress = tokenAddress.toLowerCase()
+  if (!fs.existsSync(path + '/' + tokenAddress + '.png')) {
+    timer += 1
+    setTimeout(async function() {
+      // console.log(tokenAddress)
+      await curly.get(chain.explorer + '/token/' + tokenAddress)
+      .then(({ statusCode, data }) => data)
+      .then(async (html) => {
+        const $ = cheerio.load(html)
 
-              await curly.get(chain.explorer + imgSrc)
-                .then(({ statusCode, data }) => data)
-                .then(async (buffer) => {
+        let imgSrc = ''
 
-                  // console.log(path + '/' + tokenAddress + '.png')
-                  fs.writeFile(path + '/' + tokenAddress + '.png', buffer, () => {
-                    imgDownloaded += 1
-                    logStatus()
-                  }
-                  )
-                })
-            })
-            .catch(error => {
-              console.log(tokenAddress, error)
-              errors += 1
-              logStatus()
-            })
-        }, timer * 1250)
+        if($('img.u-sm-avatar').length === 0) {
+          console.log('No picture found in the page for: ' + tokenAddress)
+          return
+        } else {
+          imgSrc = $('img.u-sm-avatar')[0].attribs.src
+        }
 
-      } else {
-        // already exists
-        alreadyExists += 1
-        logStatus()
-      }
+        // console.log(imgSrc)
+
+        await curly.get(chain.explorer + imgSrc)
+        .then(({ statusCode, data }) => data)
+        .then(async (buffer) => {
+
+          // console.log(path + '/' + tokenAddress + '.png')
+          fs.writeFile(path + '/' + tokenAddress + '.png', buffer, () => {
+            imgDownloaded += 1
+            logStatus()
+          }
+        )
+      })
     })
+    .catch(error => {
+      console.log(tokenAddress, error)
+      errors += 1
+      logStatus()
+    })
+  }, timer * 1250)
 
-  })
+} else {
+  // already exists
+  alreadyExists += 1
+  logStatus()
+}
+})
+
+})
 
 function logStatus() {
   console.log('Total: ' + total + ' | Already exists: ' + alreadyExists + ' | Downloaded: ' + imgDownloaded + ' | Errors: ' + errors)
