@@ -29,7 +29,7 @@
     "cheerio": "*",
     "make-dir": "*",
     "node-fetch": "*",
-    "node-libcurl": "*"
+    "node-libcurl": "^3"
   },
   "type": "module"
 }
