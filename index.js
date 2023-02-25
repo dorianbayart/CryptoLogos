@@ -77,7 +77,7 @@ Object.keys(json).forEach(async (tokenAddress, i) => {
 
         if($('img.u-sm-avatar').length) {
           imgSrc = $('img.u-sm-avatar')[0].attribs.src
-        } if($('img.js-token-avatar').length) {
+        } else if($('img.js-token-avatar').length) {
           imgSrc = $('img.js-token-avatar')[0].attribs.src
         } else {
           console.log('No picture found in the page for: ' + tokenAddress)
