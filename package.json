@@ -10,7 +10,8 @@
     "start:bsc": "node index.js bsc",
     "start:fantom": "node index.js fantom",
     "start:xdai": "node index.js xdai",
-    "start:all": "npm run start:ethereum && npm run start:polygon && npm run start:fantom && npm run start:xdai && npm run start:bsc "
+    "start:arbitrum_one": "node index.js arbitrum_one",
+    "start:all": "npm run start:ethereum && npm run start:polygon && npm run start:fantom && npm run start:xdai && npm run start:bsc && npm run start:arbitrum_one"
   },
   "keywords": [
     "crypto",
@@ -21,7 +22,8 @@
     "ethereum",
     "polygon",
     "bsc",
-    "fantom"
+    "fantom",
+    "arbitrum"
   ],
   "author": "Dorian Bayart",
   "license": "GNU General Public License v3.0",
