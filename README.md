@@ -46,6 +46,8 @@ where *chain* can be one of those parameters:
 * polygon
 * bsc
 * fantom
+* xdai
+* arbitrum_one
 * all
 
 
@@ -54,8 +56,10 @@ where *chain* can be one of those parameters:
 
 * [x] [Ethereum](https://github.com/dorianbayart/CryptoLogos/tree/main/CryptoLogos/ethereum)
 * [x] [Polygon](https://github.com/dorianbayart/CryptoLogos/tree/main/CryptoLogos/polygon)
-* [x] [Binance Smart Chain](https://github.com/dorianbayart/CryptoLogos/tree/main/CryptoLogos/bsc)
+* [x] [BNBChain](https://github.com/dorianbayart/CryptoLogos/tree/main/CryptoLogos/bsc)
 * [x] [Fantom](https://github.com/dorianbayart/CryptoLogos/tree/main/CryptoLogos/fantom)
+* [x] [Gnosis](https://github.com/dorianbayart/CryptoLogos/tree/main/CryptoLogos/xdai)
+* [x] [Arbitrum](https://github.com/dorianbayart/CryptoLogos/tree/main/CryptoLogos/arbitrum_one)
 
 
 
